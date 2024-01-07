@@ -1,31 +1,12 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function PersonalInfo() {
-  const fields = [
-    {
-      id: "name",
-      label: "Name",
-      type: "text", 
-      value: "vv"
-    },
-    {
-      id: "phone",
-      label: "Phone",
-      type: "text", 
-      value: "vv"
-    }
-    // name: "",
-    // phone: "",
-    // address: "",
-    // dateOfBirth: ""
-  ]
+function PersonalInfo( { data, handler } ) {
 
-
-  const [value, setValue] = useState('');
-
-  function handleSubmit(event) {
+  function handleSubmit(id, event) {
     event.preventDefault();
+    const newData = 0;
+
   }
 
 // function onChange(event) {
@@ -34,17 +15,13 @@ function PersonalInfo() {
 
   return (
     <form onSubmit={handleSubmit}>
-      {fields.map(item => (
+      {data.map(item => (
         <Input 
           key={item.id}
           label={item.label}
+          onChange={e => {handler(item.id, e)}}
         />
       ))}
-      
-      
-      {/* <label for="phone">Phone:</label>
-      <input id="phone"></input> */}
-      <div>{value}</div>
       <button type="submit">Send</button>
     </form>
   )

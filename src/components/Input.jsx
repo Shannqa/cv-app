@@ -1,8 +1,4 @@
-function Input( {id, label, type, value} ) {
-
-  function onChange(event) {
-    // setValue(event.target.value);
-  }
+function Input( {id, label, type, value, onChange} ) {
 
   return(
       <label>{label}:
