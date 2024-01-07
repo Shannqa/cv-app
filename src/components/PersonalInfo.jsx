@@ -12,6 +12,7 @@ function PersonalInfo( { data, handler } ) {
         {data.map(item => (
           <Input 
             key={item.id}
+            id={item.id}
             label={item.label}
             onChange={e => {handler(item.id, e)}}
           />

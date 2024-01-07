@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 6px;
+  background-color: #5d33a1;
+}
+
 .form {
   margin: 8px;
   border: 1px black solid;
   width: 500px;
+  background-color: white;
 }
 
 #personal-form .fields {
@@ -27,9 +36,14 @@ form button {
   width: 150px;
   margin: 4px;
   padding: 2px 6px;
+  background-color: #55ac33;
 }
 
 .fields .section {
   display: flex;
   align-items: center;
+}
+
+.finished {
+  background-color: white;
 }

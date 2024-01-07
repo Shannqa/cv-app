@@ -77,12 +77,17 @@ function App() {
     }));
   }
 
-  const handleEducationData = (id, e) => {
+  const handleEducationData = (id, e, type) => {
     setEducationData(educationData.map(item => {
-      if (item.id === id) {
+      if (item.id === id && type === "years") {
         return {
           ...item,
-          value: e.target.value,
+          valueYears: e.target.value,
+        };
+      } else if (item.id === id && type === "exp") {
+        return {
+          ...item,
+          valueSchool: e.target.value,
         };
       } else {
         return item;
@@ -95,7 +100,7 @@ function App() {
       if (item.id === id) {
         return {
           ...item,
-          value: e.target.value,
+          valueYears: e.target.value,
         };
       } else {
         return item;
@@ -140,7 +145,7 @@ function App() {
       <PersonalInfo data={personalData} handler={handlePersonalData}/>
       <Education data={educationData} handler={handleEducationData} handlerAdd={handleEducationAdd}/>
       <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/>
-      <FinishedCV personal={personalData}/>
+      <FinishedCV personal={personalData} education={educationData} experience={experienceData}/>
     </>
   )
 }

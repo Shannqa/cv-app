@@ -10,12 +10,14 @@ function Education( { data, handler, handlerAdd } ) {
           {data.map(item => (
             <div key={item.id} className="section">
             <Input
+              id={item.id + "y"} 
               label={item.labelYears}
-              onChange={e => {handler(item.id, e)}}
+              onChange={e => {handler(item.id, e, "years")}}
             />
             <Input
+              id={item.id + "e"} 
               label={item.labelSchool}
-              onChange={e => {handler(item.id, e)}}
+              onChange={e => {handler(item.id, e, "exp")}}
             />
           </div>
         ))}

@@ -10,10 +10,12 @@ function WorkExperience( { data, handler, handlerAdd } ) {
         {data.map(item => (
                     <div key={item.id} className="section">
                     <Input
-                      label={item.labelYears}
+                      id={item.id + "y"} 
+                      label={item.labelYears} 
                       onChange={e => {handler(item.id, e)}}
                     />
                     <Input
+                      id={item.id + "e"} 
                       label={item.labelWork}
                       onChange={e => {handler(item.id, e)}}
                     />
