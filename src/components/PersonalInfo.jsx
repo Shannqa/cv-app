@@ -3,29 +3,24 @@ import Input from "./Input";
 
 function PersonalInfo( { data, handler } ) {
 
-  function handleSubmit(id, event) {
-    event.preventDefault();
-    const newData = 0;
-
-  }
-
-// function onChange(event) {
-//   setValue(event.target.value);
-// }
-
+  //onSubmit={handleSubmit}
   return (
-    <form onSubmit={handleSubmit}>
-      {data.map(item => (
-        <Input 
-          key={item.id}
-          label={item.label}
-          onChange={e => {handler(item.id, e)}}
-        />
-      ))}
-      <button type="submit">Send</button>
+    <form id="personal-form">
+      <h2>Personal Information</h2>
+      <div className="form">
+        <div className="fields">
+        {data.map(item => (
+          <Input 
+            key={item.id}
+            label={item.label}
+            onChange={e => {handler(item.id, e)}}
+          />
+        ))}
+        </div>
+      </div>
+      <button type="submit">Save</button>
     </form>
   )
-
 }
 
 export default PersonalInfo

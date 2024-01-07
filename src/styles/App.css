@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  margin: 8px;
+  border: 1px black solid;
+  width: 500px;
+}
+
+#personal-form .fields {
+  display: grid;
+  grid-template-columns: auto 300px;
+}
+
+.fields label {
+  margin-left: 6px;
+}
+
+.fields input {
+  margin: 6px;
+}
+
+form button {
+  width: 150px;
+  margin: 4px;
+  padding: 2px 6px;
+}
+
+.fields .section {
+  display: flex;
+  align-items: center;
+}
