@@ -93,8 +93,8 @@ function App() {
     <>
       <PersonalInfo data={personalData} handler={handlePersonalData}/>
       <Education data={educationData} handler={handleEducationData} handlerAdd={handleEducationAdd}/>
-      <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/>
-      <FinishedCV personal={personalData} education={educationData} experience={experienceData}/>
+      {/* <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/> */}
+      {/* <FinishedCV personal={personalData} education={educationData} experience={experienceData}/> */}
     </>
   )
 }

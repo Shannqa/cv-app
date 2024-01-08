@@ -2,6 +2,8 @@ import { useState } from "react";
 import Input from "./Input";
 
 function PersonalInfo( { data, handler } ) {
+// console.log(data);
+
 
   //onSubmit={handleSubmit}
   return (
@@ -14,6 +16,7 @@ function PersonalInfo( { data, handler } ) {
             key={item.id}
             id={item.id}
             label={item.label}
+            placeholder={item.placeholder}
             onChange={e => {handler(item.id, e)}}
           />
         ))}

@@ -2,29 +2,24 @@ import { useState } from "react";
 import Input from "./Input";
 
 function Education( { data, handler, handlerAdd } ) {
+  // let nested = Object.values(data);
+  // console.log(nested);
   return (
     <form id="education-form">
       <h2>Education</h2>
       <div className="form">
         <div className="fields">
-          {data.map(item => (
-            <div key={item.id} className="section">
-            <Input
-              id={item.id + "y"} 
-              label={item.labelYears}
-              onChange={e => {handler(item.id, e, "years")}}
-            />
-            <Input
-              id={item.id + "e"} 
-              label={item.labelSchool}
-              onChange={e => {handler(item.id, e, "exp")}}
-            />
-             {(data.length > 1) ? <button onClick={handlerRemove}>X</button> : null}
-             //or
-            {(data.length > 1) && button
-          </div>
-         
-        ))}
+        {data.map((item) => (
+          item.map((item2) => ( 
+            <Input 
+            key={item2.id}
+            id={item2.id}
+            label={item2.label}
+            placeholder={item2.placeholder}
+            onChange={e => {handler(item2.id, e)}}
+          />
+          ))
+      ))}
         </div>
         <button onClick={handlerAdd}>Add more</button>
       </div>
