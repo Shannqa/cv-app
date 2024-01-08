@@ -19,7 +19,11 @@ function Education( { data, handler, handlerAdd } ) {
               label={item.labelSchool}
               onChange={e => {handler(item.id, e, "exp")}}
             />
+             {(data.length > 1) ? <button onClick={handlerRemove}>X</button> : null}
+             //or
+            {(data.length > 1) && button
           </div>
+         
         ))}
         </div>
         <button onClick={handlerAdd}>Add more</button>

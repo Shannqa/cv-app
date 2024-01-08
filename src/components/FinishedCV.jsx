@@ -4,7 +4,7 @@ function FinishedCV( { personal, education, experience } ) {
   console.log(personal);
   return(
     <div className="finished">
-      <h2>Your CV</h2>
+      <h2>Preview</h2>
       <div>
         <h3>Personal Information</h3>
         {personal.map(item => (
