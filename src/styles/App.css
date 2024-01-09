@@ -9,19 +9,42 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 6px;
-  background-color: #f0e6ee;
+  background-color: #ece7eb;
 }
 
-.form {
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
   margin: 8px;
-  border: 1px black solid;
-  width: 500px;
-  background-color: white;
 }
 
-#personal-form .fields {
-  display: grid;
-  grid-template-columns: auto 300px;
+form#personal-form .fields,
+form#education-form .section,
+form#experience-form .section {
+  margin: 8px;
+  padding: 8px;
+  border: 1px black solid;
+  width: 800px;
+  background-color: white;
+  box-shadow: 3px 3px 8px #868686;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.fields .line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fields .line:hover {
+  background-color: #eeeeee;
 }
 
 .fields label {
@@ -29,19 +52,29 @@ body {
 }
 
 .fields input {
-  margin: 6px;
+  margin: 4px;
+  height: 1.2rem;
+  width: 400px;
+
 }
 
 form button {
   width: 150px;
-  margin: 4px;
-  padding: 2px 6px;
-  background-color: #55ac33;
+  margin: 8px;
+  padding: 4px;
+  background-color: #73adc0;
+  border: none;
+  font-size: 1.1rem;
+  transition: background-color 150ms ease-in;
+  border: 1px black solid;
 }
 
-.fields .section {
-  display: flex;
-  align-items: center;
+form button:hover {
+  background-color: #7fc8e0;
+}
+
+form button:active {
+  background-color: #62ab70;
 }
 
 .finished {

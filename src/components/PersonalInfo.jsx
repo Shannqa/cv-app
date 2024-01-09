@@ -9,8 +9,7 @@ function PersonalInfo( { data, handler } ) {
   return (
     <form id="personal-form">
       <h2>Personal Information</h2>
-      <div className="form">
-        <div className="fields">
+      <div className="fields">
         {data.map(item => (
           <Input 
             key={item.id}
@@ -20,7 +19,6 @@ function PersonalInfo( { data, handler } ) {
             onChange={e => {handler(item.id, e)}}
           />
         ))}
-        </div>
       </div>
       <button type="submit">Save</button>
     </form>

@@ -40,7 +40,8 @@ const personal = [
   {
     id: uuidv4(),
     label: "Email Address",
-    value: "example@email.com",
+    value: "",
+    placeholder: "example@email.com",
   },
 ];
 
@@ -74,38 +75,39 @@ const education = [
 ];
 
 const experience = [
-  {
-    dateStart: {
+  [
+    {
       id: uuidv4(),
       label: "Start Date",
       value: "",
       placeholder: "2020-05",
     },
-    dateEnd: {
+    {
       id: uuidv4(),
       label: "End Date",
       value: "",
       placeholder: "currently",
     },
-    workplace: {
+    {
       id: uuidv4(),
       label: "Workplace",
       value: "",
       placeholder: "Easy Fix Corporation",
     },
-    position: {
+    {
       id: uuidv4(),
       label: "Position (optional)",
       value: "",
       placeholder: "Assistant Manager",
     },
-    details: {
+    {
       id: uuidv4(),
       label: "Details (optional)",
       value: "",
-      placeholder: "Responsibilities include managing people and holding important meetings",
+      placeholder:
+        "Responsibilities include managing people and holding important meetings",
     },
-  },
+  ],
 ];
 
 const skills = [
@@ -115,6 +117,6 @@ const skills = [
     value: "",
     placeholder: "Answering phones",
   },
-]
+];
 
 export { personal, education, experience };

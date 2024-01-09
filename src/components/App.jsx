@@ -62,13 +62,32 @@ function App() {
     setEducationData(
       [
         ...educationData,
-        {
-          id: uuidv4(),
-          labelYears: "Years",
-          valueYears: "",
-          labelSchool: "School",
-          valueSchool: ""
-        }
+        [
+          {
+            id: uuidv4(),
+            label: "Start Date",
+            value: "",
+            placeholder: "2016",
+          },
+          {
+            id: uuidv4(),
+            label: "End Date",
+            value: "",
+            placeholder: "2020",
+          },
+          {
+            id: uuidv4(),
+            label: "School",
+            value: "",
+            placeholder: "Example University",
+          },
+          {
+            id: uuidv4(),
+            label: "Degree (optional)",
+            value: "",
+            placeholder: "Computer Science",
+          },
+        ],
       ]
     )
   }
@@ -78,13 +97,39 @@ function App() {
     setExperienceData(
       [
         ...experienceData,
-        {
-          id: uuidv4(),
-          labelYears: "Years",
-          valueYears: "",
-          labelWork: "Workplace",
-          valueWork: ""
-        }
+        [
+          {
+            id: uuidv4(),
+            label: "Start Date",
+            value: "",
+            placeholder: "2020-05",
+          },
+          {
+            id: uuidv4(),
+            label: "End Date",
+            value: "",
+            placeholder: "currently",
+          },
+          {
+            id: uuidv4(),
+            label: "Workplace",
+            value: "",
+            placeholder: "Easy Fix Corporation",
+          },
+          {
+            id: uuidv4(),
+            label: "Position (optional)",
+            value: "",
+            placeholder: "Assistant Manager",
+          },
+          {
+            id: uuidv4(),
+            label: "Details (optional)",
+            value: "",
+            placeholder:
+              "Responsibilities include managing people and holding important meetings",
+          },
+        ]
       ]
     )
   }
@@ -93,7 +138,7 @@ function App() {
     <>
       <PersonalInfo data={personalData} handler={handlePersonalData}/>
       <Education data={educationData} handler={handleEducationData} handlerAdd={handleEducationAdd}/>
-      {/* <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/> */}
+      <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/>
       {/* <FinishedCV personal={personalData} education={educationData} experience={experienceData}/> */}
     </>
   )
