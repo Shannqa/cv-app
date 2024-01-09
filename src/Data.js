@@ -5,42 +5,42 @@ const personal = [
     id: uuidv4(),
     label: "First Name",
     value: "",
-    placeholder: "Enter your first name",
+    placeholder: "Jane",
   },
   {
     id: uuidv4(),
     label: "Last Name",
     value: "",
-    placeholder: "Enter your last name",
+    placeholder: "Doe",
   },
   {
     id: uuidv4(),
     label: "Date of Birth (YYYY-MM-DD)",
     value: "",
-    placeholder: "Enter your date of birth: YYYY-MM-DD",
+    placeholder: "1985-03-25",
   },
   {
     id: uuidv4(),
-    label: "Address",
+    label: "Street Name and Number",
     value: "",
-    placeholder: "Enter your street name and number",
+    placeholder: "Apple St. 10/15",
   },
   {
     id: uuidv4(),
-    label: "Address (cont.)",
+    label: "Zip Code and City",
     value: "",
-    placeholder: "Enter your zip code and city",
+    placeholder: "1638-283 Fruitland",
   },
   {
     id: uuidv4(),
     label: "Phone Number",
     value: "",
-    placeholder: "Enter your phone number",
+    placeholder: "+65245563123",
   },
   {
     id: uuidv4(),
     label: "Email Address",
-    value: "Enter your email address",
+    value: "example@email.com",
   },
 ];
 
@@ -48,27 +48,27 @@ const education = [
   [
     {
       id: uuidv4(),
-      label: "Start Date (year, year and month or full date)",
+      label: "Start Date",
       value: "",
-      placeholder: "Enter start date, either YYYY, YYYY-MM, or YYYY-MM-DD",
+      placeholder: "2016",
     },
     {
       id: uuidv4(),
-      label: "End Date (year, year and month or full date)",
+      label: "End Date",
       value: "",
-      placeholder: "Enter end date, either YYYY, YYYY-MM, or YYYY-MM-DD",
+      placeholder: "2020",
     },
     {
       id: uuidv4(),
       label: "School",
       value: "",
-      placeholder: "",
+      placeholder: "Example University",
     },
     {
       id: uuidv4(),
       label: "Degree (optional)",
-      value: "Enter your degree",
-      placeholder: "",
+      value: "",
+      placeholder: "Computer Science",
     },
   ],
 ];
@@ -77,35 +77,44 @@ const experience = [
   {
     dateStart: {
       id: uuidv4(),
-      label: "Start Date (year, year and month or full date)",
+      label: "Start Date",
       value: "",
-      placeholder: "Enter start date, either YYYY, YYYY-MM, or YYYY-MM-DD",
+      placeholder: "2020-05",
     },
     dateEnd: {
       id: uuidv4(),
-      label: "End Date (year, year and month or full date)",
+      label: "End Date",
       value: "",
-      placeholder: "Enter end date, either YYYY, YYYY-MM, or YYYY-MM-DD",
+      placeholder: "currently",
     },
     workplace: {
       id: uuidv4(),
       label: "Workplace",
       value: "",
-      placeholder: "",
+      placeholder: "Easy Fix Corporation",
     },
     position: {
       id: uuidv4(),
       label: "Position (optional)",
       value: "",
-      placeholder: "",
+      placeholder: "Assistant Manager",
     },
-    position: {
+    details: {
       id: uuidv4(),
-      label: "Degree (optional)",
+      label: "Details (optional)",
       value: "",
-      placeholder: "",
+      placeholder: "Responsibilities include managing people and holding important meetings",
     },
   },
 ];
+
+const skills = [
+  {
+    id: uuidv4(),
+    label: "Skill",
+    value: "",
+    placeholder: "Answering phones",
+  },
+]
 
 export { personal, education, experience };
