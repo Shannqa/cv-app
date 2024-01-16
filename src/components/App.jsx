@@ -6,13 +6,16 @@ import FinishedCV from "./FinishedCV";
 import PersonalInfo from "./PersonalInfo";
 import WorkExperience from "./WorkExperience";
 import Education from "./Education";
-import { personal, education, experience } from "../Data.js";
+import Skills from "./Skills";
+
+import { personal, education, experience, skills } from "../Data.js";
 
 function App() {
   const [personalData, setPersonalData] = useState(personal);
   const [educationData, setEducationData] = useState(education);
   const [experienceData, setExperienceData] = useState(experience);
-  
+  const [skillsData, setSkillsData] = useState(skills);
+
   const handlePersonalData = (id, e) => {
     setPersonalData(personalData.map(item => {
       if (item.id === id) {
@@ -64,6 +67,9 @@ function App() {
         ...educationData,
         [
           {
+            sectionID: uuidv4(),
+          },
+          {
             id: uuidv4(),
             label: "Start Date",
             value: "",
@@ -98,6 +104,10 @@ function App() {
       [
         ...experienceData,
         [
+
+          {
+            sectionID: uuidv4(),
+          },
           {
             id: uuidv4(),
             label: "Start Date",
@@ -139,6 +149,7 @@ function App() {
       <PersonalInfo data={personalData} handler={handlePersonalData}/>
       <Education data={educationData} handler={handleEducationData} handlerAdd={handleEducationAdd}/>
       <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/>
+      <Skills data={skillsData}/>
       {/* <FinishedCV personal={personalData} education={educationData} experience={experienceData}/> */}
     </>
   )

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function Skills() {
+function Skills( { data, handler } ) {
   return(
      <form id="skills-form">
       <h2>Skills</h2>

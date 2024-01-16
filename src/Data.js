@@ -48,6 +48,9 @@ const personal = [
 const education = [
   [
     {
+      sectionID: uuidv4(),
+    },
+    {
       id: uuidv4(),
       label: "Start Date",
       value: "",
@@ -76,6 +79,9 @@ const education = [
 
 const experience = [
   [
+    {
+      sectionID: uuidv4(),
+    },
     {
       id: uuidv4(),
       label: "Start Date",
@@ -119,4 +125,4 @@ const skills = [
   },
 ];
 
-export { personal, education, experience };
+export { personal, education, experience, skills };
