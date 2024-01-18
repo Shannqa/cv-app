@@ -63,6 +63,11 @@ function WorkExperience( { data, setter } ) {
     )
   }
 
+  function handleDelete(id, e) {
+    e.preventDefault;
+    setter(data.filter((section) => section[0].sectionID !== id))
+  }
+  
   return (
     <form id="experience-form">
       <h2>Work Experience</h2>
@@ -85,7 +90,6 @@ function WorkExperience( { data, setter } ) {
         ))}
     </div>
     <div className="buttons">
-      <button type="submit">Save</button>
       <button onClick={handleExperienceAdd}>Add more</button>
     </div>
     </form>

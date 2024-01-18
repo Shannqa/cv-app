@@ -27,7 +27,9 @@ function Skills( { data, setter } ) {
         ))}
         </div>
       </div>
-      <button type="submit">Save</button>
+      <div className="buttons">
+        <button onClick={handleExperienceAdd}>Add more</button>
+      </div>
     </form>
     )
 }

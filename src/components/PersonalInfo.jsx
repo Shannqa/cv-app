@@ -30,7 +30,6 @@ function PersonalInfo( { data, setter } ) {
           />
         ))}
       </div>
-      <button type="submit">Save</button>
     </form>
   )
 }
