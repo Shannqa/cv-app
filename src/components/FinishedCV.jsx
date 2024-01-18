@@ -16,16 +16,20 @@ function FinishedCV( { personal, education, experience } ) {
       </div>
       <div>
         <h3>Education</h3>
-        {education.map(item => (
+        {education.map((section) => (
+          <div className="finishedSection">
+          {section.map((item) => ( 
           <div key={item.id}>
             <div>
-              <div>{item.labelYears}</div>
-              <div>{item.valueYears}</div>
+              <div>{item.label}</div>
+              <div>{item.value}</div>
             </div>
             <div>
               <div>{item.labelSchool}</div>
               <div>{item.valueSchool}</div>
             </div>
+          </div>
+          ))}
           </div>
         ))}
       </div>
