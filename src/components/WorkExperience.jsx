@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Input from "./Input";
+import DeleteBtn from "./DeleteBtn";
 
 function WorkExperience( { data, setter } ) {
   
@@ -75,6 +77,8 @@ function WorkExperience( { data, setter } ) {
         {data.map((section) => (
           <div key={section[0].sectionID} className="section">
             <h3>Job</h3>
+            <DeleteBtn handler={e => {handleDelete(section[0].sectionID, e)}}
+              />
             {section.map((item) => ( 
               // do not render the object containing only the section's ID
               item.sectionID ? null :
@@ -88,10 +92,8 @@ function WorkExperience( { data, setter } ) {
             ))}
           </div>
         ))}
-    </div>
-    <div className="buttons">
-      <button onClick={handleExperienceAdd}>Add more</button>
-    </div>
+      </div>
+      <button className="add-btn" onClick={handleExperienceAdd}>Add more</button>
     </form>
   )
 }

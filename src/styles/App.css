@@ -22,14 +22,17 @@ h2 {
 }
 
 form#personal-form .fields,
+form#skills-form .fields,
 form#education-form .section,
-form#experience-form .section {
+form#experience-form .section,
+.customization {
   margin: 8px;
   padding: 8px;
   border: 1px black solid;
   width: 800px;
   background-color: white;
   box-shadow: 3px 3px 8px #868686;
+  position: relative;
 }
 
 .fields {
@@ -59,7 +62,7 @@ form#experience-form .section {
 
 }
 
-form button {
+.add-btn {
   width: 150px;
   margin: 8px;
   padding: 4px;
@@ -70,14 +73,72 @@ form button {
   border: 1px black solid;
 }
 
-form button:hover {
+.add-btn:hover {
   background-color: #7fc8e0;
 }
 
-form button:active {
+.add-btn:active {
   background-color: #62ab70;
 }
 
 .finished {
   background-color: white;
+}
+
+.del-btn {
+  background-color: #ca9999;
+  margin: 6px;
+  width: 1.4rem;
+  height: 1.4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin-bottom: 4px;
+  font-size: 1.17rem;
+}
+
+.customization legend {
+  font-size: 1.17rem;
+  font-weight: bold;
+}
+
+.customization fieldset {
+  border: 0;
+}
+
+.customization legend {
+  margin-bottom: 4px;
+}
+
+.customization input {
+  margin-right: 4px;
+}
+
+.customization label {
+  margin-right: 8px;
+}
+
+
+.inputs {
+  display: flex;
+  align-items: center;
+}
+
+.skill-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-line .del-btn {
+  position: static;
+}
+
+.skill-line label {
+  margin-right: 10px;
 }

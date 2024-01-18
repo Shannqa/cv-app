@@ -1,6 +1,6 @@
-function DeleteBtn( { id, label, type, value, onChange, placeholder } ) {
+function DeleteBtn( { id, e, handler } ) {
   return(
-    <button onclick={handleDelete}>
+    <button className="del-btn" onClick={handler}>
     X</button>
   )
 }

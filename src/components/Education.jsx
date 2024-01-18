@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Input from "./Input";
+import DeleteBtn from "./DeleteBtn";
 
 function Education( { data, setter } ) {
   
@@ -55,7 +57,7 @@ const handleEducationData = (id, e) => {
   }
 
 function handleDelete(id, e) {
-  e.preventDefault;
+  e.preventDefault();
   setter(data.filter((section) => section[0].sectionID !== id))
 }
 
@@ -66,27 +68,24 @@ function handleDelete(id, e) {
         {data.map((section) => (
           <div key={section[0].sectionID} className="section">
             <h3>School</h3>
+            <DeleteBtn handler={e => {handleDelete(section[0].sectionID, e)}}
+              />
             {section.map((item) => ( 
               // do not render the object containing only the section's ID
               item.sectionID ? null :
-              <><Input 
+              <Input 
                 key={item.id}
                 id={item.id}
                 label={item.label}
                 placeholder={item.placeholder}
                 onChange={e => {handleEducationData(item.id, e)}}
               />
-              <DeleteBtn 
-                onClick={e => {handleDelete(item.sectionID, e)}}
-              />
-              </>
+
             ))}
           </div>
         ))}
       </div>
-      <div className="buttons">
-        <button onClick={handleEducationAdd}>Add more</button>
-      </div>
+      <button className="add-btn" onClick={handleEducationAdd}>Add more</button>
     </form>
   )
 }

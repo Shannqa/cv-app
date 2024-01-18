@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import '../styles/App.css'
 
 import FinishedCV from "./FinishedCV";
@@ -7,6 +7,7 @@ import PersonalInfo from "./PersonalInfo";
 import WorkExperience from "./WorkExperience";
 import Education from "./Education";
 import Skills from "./Skills";
+import Customization from "./Customization";
 
 import { personal, education, experience, skills } from "../Data.js";
 
@@ -24,7 +25,7 @@ function App() {
       <WorkExperience data={experienceData} setter={setExperienceData} />
       <Skills data={skillsData} setter={setSkillsData} />
       <Customization style={style} setter={setStyle}/>
-      <FinishedCV personal={personalData} education={educationData} experience={experienceData} style={style}/>
+      {/* <FinishedCV personal={personalData} education={educationData} experience={experienceData} style={style}/> */}
     </>
   )
 }
