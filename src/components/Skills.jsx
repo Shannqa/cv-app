@@ -1,7 +1,16 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function Skills( { data, handler } ) {
+function Skills( { data, setter } ) {
+  
+  const handleSkillsData = (id, e) => {
+
+  }
+  
+  const handleSkillsAdd = (e) => {
+
+  }
+  
   return(
      <form id="skills-form">
       <h2>Skills</h2>
@@ -13,7 +22,7 @@ function Skills( { data, handler } ) {
             id={item.id}
             label={item.label}
             placeholder={item.placeholder}
-            onChange={e => {handler(item.id, e)}}
+            onChange={e => {handleSkillsData(item.id, e)}}
           />
         ))}
         </div>

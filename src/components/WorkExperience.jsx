@@ -1,7 +1,68 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function WorkExperience( { data, handler, handlerAdd } ) {
+function WorkExperience( { data, setter } ) {
+  
+  const handleExperienceData = (id, e) => {
+    setter(data.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          valueYears: e.target.value,
+        };
+      } else {
+        return item;
+      }
+    }));
+  }
+
+  
+  const handleExperienceAdd = (e) => {
+    e.preventDefault();
+    setter(
+      [
+        ...data,
+        [
+
+          {
+            sectionID: uuidv4(),
+          },
+          {
+            id: uuidv4(),
+            label: "Start Date",
+            value: "",
+            placeholder: "2020-05",
+          },
+          {
+            id: uuidv4(),
+            label: "End Date",
+            value: "",
+            placeholder: "currently",
+          },
+          {
+            id: uuidv4(),
+            label: "Workplace",
+            value: "",
+            placeholder: "Easy Fix Corporation",
+          },
+          {
+            id: uuidv4(),
+            label: "Position (optional)",
+            value: "",
+            placeholder: "Assistant Manager",
+          },
+          {
+            id: uuidv4(),
+            label: "Details (optional)",
+            value: "",
+            placeholder:
+              "Responsibilities include managing people and holding important meetings",
+          },
+        ]
+      ]
+    )
+  }
+
   return (
     <form id="experience-form">
       <h2>Work Experience</h2>
@@ -17,7 +78,7 @@ function WorkExperience( { data, handler, handlerAdd } ) {
                 id={item.id}
                 label={item.label}
                 placeholder={item.placeholder}
-                onChange={e => {handler(item.id, e)}}
+                onChange={e => {handleExperienceData(item.id, e)}}
               />
             ))}
           </div>
@@ -25,7 +86,7 @@ function WorkExperience( { data, handler, handlerAdd } ) {
     </div>
     <div className="buttons">
       <button type="submit">Save</button>
-      <button onClick={handlerAdd}>Add more</button>
+      <button onClick={handleExperienceAdd}>Add more</button>
     </div>
     </form>
   )

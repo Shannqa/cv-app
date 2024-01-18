@@ -1,7 +1,59 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function Education( { data, handler, handlerAdd } ) {
+function Education( { data, setter } ) {
+  
+const handleEducationData = (id, e) => {
+    setter(data.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          value: e.target.value,
+        };
+      } else {
+        return item;
+      }
+    }));
+  }
+  
+  const handleEducationAdd = (e) => {
+    e.preventDefault();
+    setterData(
+      [
+        ...data,
+        [
+          {
+            sectionID: uuidv4(),
+          },
+          {
+            id: uuidv4(),
+            label: "Start Date",
+            value: "",
+            placeholder: "2016",
+          },
+          {
+            id: uuidv4(),
+            label: "End Date",
+            value: "",
+            placeholder: "2020",
+          },
+          {
+            id: uuidv4(),
+            label: "School",
+            value: "",
+            placeholder: "Example University",
+          },
+          {
+            id: uuidv4(),
+            label: "Degree (optional)",
+            value: "",
+            placeholder: "Computer Science",
+          },
+        ],
+      ]
+    )
+  }
+
 
   return (
     <form id="education-form">
@@ -19,7 +71,7 @@ function Education( { data, handler, handlerAdd } ) {
                 id={item.id}
                 label={item.label}
                 placeholder={item.placeholder}
-                onChange={e => {handler(item.id, e)}}
+                onChange={e => {handleEducationData(item.id, e)}}
               />
             ))}
           </div>
@@ -27,7 +79,7 @@ function Education( { data, handler, handlerAdd } ) {
       </div>
       <div className="buttons">
         <button type="submit">Save</button>
-        <button onClick={handlerAdd}>Add more</button>
+        <button onClick={handleEducationAdd}>Add more</button>
       </div>
     </form>
   )

@@ -1,11 +1,21 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function PersonalInfo( { data, handler } ) {
-// console.log(data);
+function PersonalInfo( { data, setter } ) {
 
+  const handlePersonalData = (id, e) => {
+    setter(data.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          value: e.target.value,
+        };
+      } else {
+        return item;
+      }
+    }));
+  }
 
-  //onSubmit={handleSubmit}
   return (
     <form id="personal-form">
       <h2>Personal Information</h2>
@@ -16,7 +26,7 @@ function PersonalInfo( { data, handler } ) {
             id={item.id}
             label={item.label}
             placeholder={item.placeholder}
-            onChange={e => {handler(item.id, e)}}
+            onChange={e => {handlePersonalData(item.id, e)}}
           />
         ))}
       </div>
