@@ -15,6 +15,7 @@ function App() {
   const [educationData, setEducationData] = useState(education);
   const [experienceData, setExperienceData] = useState(experience);
   const [skillsData, setSkillsData] = useState(skills);
+  const [style, setStyle] = useState("style1");
 
   const handlePersonalData = (id, e) => {
     setPersonalData(personalData.map(item => {
@@ -153,7 +154,8 @@ function App() {
       <Education data={educationData} handler={handleEducationData} handlerAdd={handleEducationAdd}/>
       <WorkExperience data={experienceData} handler={handleExperienceData} handlerAdd={handleExperienceAdd}/>
       <Skills data={skillsData} handler={handleSkillsData} handlerAdd={handleSkillsAdd} />
-      <FinishedCV personal={personalData} education={educationData} experience={experienceData}/>
+      <Customization styleSetter={setStyle} styleState={style}/>
+      <FinishedCV personal={personalData} education={educationData} experience={experienceData} style={styleState}/>
     </>
   )
 }

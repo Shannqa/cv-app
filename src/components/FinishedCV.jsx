@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function FinishedCV( { personal, education, experience } ) {
+function FinishedCV( { personal, education, experience, style } ) {
   console.log(personal);
   return(
-    <div className="finished">
+    <div id="preview" className={style}>
       <h2>Preview</h2>
       <div>
         <h3>Personal Information</h3>
