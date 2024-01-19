@@ -2,51 +2,58 @@ import { useState } from "react";
 
 function FinishedCV( { personal, education, experience, style } ) {
   console.log(personal);
+  
+  const contactInfo = personal.filter((item) => item.label !== "First Name" && item.label !== "Last Name" );
+  
   return(
-    <div id="preview" className={style}>
+    <div className="finishedCV">
       <h2>Preview</h2>
-      <div>
-        <h3>Personal Information</h3>
-        {personal.map(item => (
-          <div key={item.id}>
-            <div>{item.label}</div>
-            <div>{item.value}</div>
-          </div>
-        ))}
-      </div>
-      <div>
-        <h3>Education</h3>
-        {education.map((section) => (
-          <div className="finishedSection">
-          {section.map((item) => ( 
-          <div key={item.id}>
-            <div>
-              <div>{item.label}</div>
+      <div id="preview" className={style}>
+        <h3>{personal[0].value} {personal[1].value}</h3>
+        <h4>Contact</h4>
+        <div className="contact-info">
+          {contactInfo.map(item => (
+            <div key={item.id}>
+              <img src={item.img} />
               <div>{item.value}</div>
             </div>
-            <div>
-              <div>{item.labelSchool}</div>
-              <div>{item.valueSchool}</div>
-            </div>
-          </div>
           ))}
-          </div>
-        ))}
-      </div>
-      <div>
-        <h3>Work Experience</h3>
-        {experience.map(item => (
-          <div key={item.id}>
-          <div>
-            <div>{item.labelYears}</div>
-            <div>{item.valueYears}</div>
-          </div>
-          <div>
-            <div>{item.labelWork}</div>
-            <div>{item.valueWork}</div>
-          </div>
         </div>
-      ))}
+        <div>
+          <h4>Education</h4>
+          {education.map((section) => (
+            <div className="finishedSection">
+              {section.map((item) => ( 
+                <div key={item.id}>
+                  <span>{item.label}</span>
+                  <span>{item.value}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div>
+          <h4>Work Experience</h4>
+          {experience.map((section) => (
+            <div className="finishedSection">
+              {section.map((item) => ( 
+                <div key={item.id}>
+                  <span>{item.label}</span>
+                  <span>{item.value}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <h4>Skills</h4>
+        <div className="skill-info">
+          {skills.map(item => (
+            <div key={item.id}>
+              <span>{item.label}</span>
+              <span>{item.value}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

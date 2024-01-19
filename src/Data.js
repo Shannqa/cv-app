@@ -15,33 +15,31 @@ const personal = [
   },
   {
     id: uuidv4(),
-    label: "Date of Birth (YYYY-MM-DD)",
+    label: "City",
     value: "",
-    placeholder: "1985-03-25",
-  },
-  {
-    id: uuidv4(),
-    label: "Street Name and Number",
-    value: "",
-    placeholder: "Apple St. 10/15",
-  },
-  {
-    id: uuidv4(),
-    label: "Zip Code and City",
-    value: "",
-    placeholder: "1638-283 Fruitland",
+    placeholder: "London",
+    img: "location_on_FILL0_wght400_GRAD0_opsz24.svg"
   },
   {
     id: uuidv4(),
     label: "Phone Number",
     value: "",
     placeholder: "+65245563123",
+    img: "smartphone_FILL0_wght400_GRAD0_opsz24.svg"
   },
   {
     id: uuidv4(),
     label: "Email Address",
     value: "",
     placeholder: "example@email.com",
+    img: "mail_FILL0_wght400_GRAD0_opsz24.svg"
+  },
+  {
+    id: uuidv4(),
+    label: "Website",
+    value: "",
+    placeholder: "janedoe.example.com",
+    img: "language_FILL0_wght400_GRAD0_opsz24.svg"
   },
 ];
 
