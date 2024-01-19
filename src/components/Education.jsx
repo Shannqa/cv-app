@@ -5,17 +5,21 @@ import DeleteBtn from "./DeleteBtn";
 
 function Education( { data, setter } ) {
   
-const handleEducationData = (id, e) => {
-    setter(data.map(item => {
-      if (item.id === id) {
-        return {
-          ...item,
-          value: e.target.value,
-        };
-      } else {
-        return item;
-      }
-    }));
+  const handleEducationData = (id, e) => {
+    setter(data.map(section => {
+      console.log(section);
+      return section.map((item) => { // remember to return in nested arrays!
+        console.log(item);
+        if (item.id === id) {
+          return {
+            ...item,
+            value: e.target.value,
+          };
+        } else {
+          return item;
+        }
+      })
+    }))
   }
   
   const handleEducationAdd = (e) => {

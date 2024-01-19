@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-function FinishedCV( { personal, education, experience, style } ) {
-  console.log(personal);
+function FinishedCV( { personal, education, experience, skills, style } ) {
   
   const contactInfo = personal.filter((item) => item.label !== "First Name" && item.label !== "Last Name" );
   
@@ -15,7 +14,7 @@ function FinishedCV( { personal, education, experience, style } ) {
           {contactInfo.map(item => (
             <div key={item.id}>
               <img src={item.img} />
-              <div>{item.value}</div>
+              <span>{item.value}</span>
             </div>
           ))}
         </div>

@@ -6,18 +6,21 @@ import DeleteBtn from "./DeleteBtn";
 function WorkExperience( { data, setter } ) {
   
   const handleExperienceData = (id, e) => {
-    setter(data.map(item => {
-      if (item.id === id) {
-        return {
-          ...item,
-          valueYears: e.target.value,
-        };
-      } else {
-        return item;
-      }
-    }));
+    setter(data.map(section => {
+      console.log(section);
+      return section.map((item) => { // remember to return in nested arrays!
+        console.log(item);
+        if (item.id === id) {
+          return {
+            ...item,
+            value: e.target.value,
+          };
+        } else {
+          return item;
+        }
+      })
+    }))
   }
-
   
   const handleExperienceAdd = (e) => {
     e.preventDefault();

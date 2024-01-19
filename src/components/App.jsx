@@ -25,7 +25,7 @@ function App() {
       <WorkExperience data={experienceData} setter={setExperienceData} />
       <Skills data={skillsData} setter={setSkillsData} />
       <Customization style={style} setter={setStyle}/>
-      {/* <FinishedCV personal={personalData} education={educationData} experience={experienceData} style={style}/> */}
+      <FinishedCV personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={style}/>
     </>
   )
 }
