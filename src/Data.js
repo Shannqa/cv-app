@@ -68,7 +68,7 @@ const education = [
     },
     {
       id: uuidv4(),
-      label: "Degree (optional)",
+      label: "Degree / Profile",
       value: "",
       placeholder: "Computer Science",
     },
@@ -94,13 +94,13 @@ const experience = [
     },
     {
       id: uuidv4(),
-      label: "Workplace",
+      label: "Company",
       value: "",
       placeholder: "Easy Fix Corporation",
     },
     {
       id: uuidv4(),
-      label: "Position (optional)",
+      label: "Position",
       value: "",
       placeholder: "Assistant Manager",
     },
@@ -123,4 +123,6 @@ const skills = [
   },
 ];
 
-export { personal, education, experience, skills };
+const image = "";
+
+export { personal, education, experience, skills, image };

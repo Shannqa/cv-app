@@ -9,7 +9,7 @@ import Education from "./Education";
 import Skills from "./Skills";
 import Customization from "./Customization";
 
-import { personal, education, experience, skills } from "../Data.js";
+import { personal, education, experience, skills, image } from "../Data.js";
 
 function App() {
   const [personalData, setPersonalData] = useState(personal);
@@ -17,6 +17,7 @@ function App() {
   const [experienceData, setExperienceData] = useState(experience);
   const [skillsData, setSkillsData] = useState(skills);
   const [style, setStyle] = useState("style1");
+  const [imageURL, setImageURL] = useState("");
 
   return(
     <>
@@ -24,8 +25,9 @@ function App() {
       <Education data={educationData} setter={setEducationData} />
       <WorkExperience data={experienceData} setter={setExperienceData} />
       <Skills data={skillsData} setter={setSkillsData} />
+      <UploadImage data={imageURL} setter={setImageURL} />
       <Customization style={style} setter={setStyle}/>
-      <FinishedCV personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={style}/>
+      <FinishedCV personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={style} image={imageURL}/>
     </>
   )
 }
