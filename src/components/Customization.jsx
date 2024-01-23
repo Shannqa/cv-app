@@ -5,10 +5,9 @@ function Customization( { style, setter } ) {
   }
   
   return(
-    <div className="customization">
-      <fieldset>
-        <legend>Select the style of your CV</legend>
-        <div className="inputs">
+    <form id="custom-form">
+      <h2>Select the style of your CV</h2>
+        <div className="customization">
           <input type="radio" name="style" value="style1" id="style1" checked={style === "style1"} onChange={() => handleStyleChange("style1")}></input>
           <label htmlFor="style1">Style 1</label>
           <input type="radio" name="style" value="style2" id="style2" checked={style === "style2"} onChange={() => handleStyleChange("style2")}></input>
@@ -16,8 +15,8 @@ function Customization( { style, setter } ) {
           <input type="radio" name="style" value="style3" id="style3" checked={style === "style3"} onChange={() => handleStyleChange("style3")}></input>
           <label htmlFor="style3">Style 3</label>
         </div>
-      </fieldset>
-    </div>
+        
+      </form>
   )
 }
 

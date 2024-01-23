@@ -8,11 +8,16 @@ function UploadImage( { data, setter }) {
   }
   
   return(
-    <div>
-      <h3>Upload your photo</h3>
-      <input type="file" onChange={handleUpload} />
-      <img src={data} />
-    </div>
+    <form id="image-form">
+      <h2>Photo</h2>
+      <div className="fields">
+        <h3>Upload your photo</h3>
+        <input type="file" accept="image/png, image/jpeg" onChange={handleUpload} />
+        <p>Allowed formats: png, jpg. Recommended size: 200x200px.</p>
+        {data ? <img src={data} className="photo" /> : null}
+      </div>
+      
+    </form>
     
     
     
