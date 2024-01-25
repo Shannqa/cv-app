@@ -1,8 +1,7 @@
-import { useState } from "react";
-
+import { useRef, useState } from "react";
+import ReactToPrint, { useReactToPrint } from "react-to-print";
 import '../styles/App.css'
-
-import FinishedCV from "./FinishedCV";
+import { FinishedCV } from "./FinishedCV";
 import PersonalInfo from "./PersonalInfo";
 import WorkExperience from "./WorkExperience";
 import Education from "./Education";
@@ -11,7 +10,6 @@ import Customization from "./Customization";
 import UploadImage from "./UploadImage.jsx";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
-
 import { personal, education, experience, skills, image, style } from "../Data.js";
 
 function App() {
@@ -22,6 +20,11 @@ function App() {
   const [styleData, setStyle] = useState(JSON.parse(localStorage.getItem("styleData")) || style);
   const [imageData, setImageData] = useState(image);
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current
+  });
+
   return(
     <>
       <Header />
@@ -31,8 +34,9 @@ function App() {
       <Skills data={skillsData} setter={setSkillsData} />
       <UploadImage data={imageData} setter={setImageData} />
       <Customization style={style} setter={setStyle}/>
-      <FinishedCV personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={styleData} image={imageData}/>
+      <FinishedCV ref={componentRef} personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={styleData} image={imageData}/>
       <Footer />
+      <button onClick={handlePrint}>print</button>
     </>
   )
 }

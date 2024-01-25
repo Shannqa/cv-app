@@ -1,6 +1,7 @@
 import { useState } from "react";
+import React from "react";
 
-function FinishedCV( { personal, education, experience, skills, style, image } ) {
+export const FinishedCV = React.forwardRef(( { personal, education, experience, skills, style, image }, ref ) => {
   
   const contactInfo = personal.filter((item) => item.label !== "First Name" && item.label !== "Last Name" );
   
@@ -27,7 +28,7 @@ function FinishedCV( { personal, education, experience, skills, style, image } )
       <button onClick={handleDelete} className="add-btn">Delete draft</button> 
       <button className="add-btn">Download PDF</button>
       
-      <div id="preview" className={style}>
+      <div id="preview" className={style} ref={ref}>
         <div className="left">
         <img src={image || "./src/assets/face_3_FILL1_wght400_GRAD0_opsz24.svg"} className="photo" />
           <h4>Contact</h4>
@@ -102,6 +103,4 @@ function FinishedCV( { personal, education, experience, skills, style, image } )
       </div>
     </div>
   )
-}
-
-export default FinishedCV;
+})
