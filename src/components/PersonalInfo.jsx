@@ -27,6 +27,7 @@ function PersonalInfo( { data, setter } ) {
             id={item.id}
             label={item.label}
             placeholder={item.placeholder}
+            value={item.value}
             onChange={e => {handlePersonalData(item.id, e)}}
           />
         ))}

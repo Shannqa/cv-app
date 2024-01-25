@@ -89,6 +89,7 @@ function WorkExperience( { data, setter } ) {
                 key={item.id}
                 id={item.id}
                 label={item.label}
+                value={item.value}
                 placeholder={item.placeholder}
                 onChange={e => {handleExperienceData(item.id, e)}}
               />

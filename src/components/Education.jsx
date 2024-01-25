@@ -81,6 +81,7 @@ function handleDelete(id, e) {
                 key={item.id}
                 id={item.id}
                 label={item.label}
+                value={item.value}
                 placeholder={item.placeholder}
                 onChange={e => {handleEducationData(item.id, e)}}
               />

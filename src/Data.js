@@ -124,5 +124,6 @@ const skills = [
 ];
 
 const image = "";
+const style = "style1";
 
-export { personal, education, experience, skills, image };
+export { personal, education, experience, skills, image, style };

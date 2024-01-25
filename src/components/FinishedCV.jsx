@@ -4,10 +4,27 @@ function FinishedCV( { personal, education, experience, skills, style, image } )
   
   const contactInfo = personal.filter((item) => item.label !== "First Name" && item.label !== "Last Name" );
   
+  function setLocalStorage(storageKey, storedData) {
+    localStorage.setItem(storageKey, JSON.stringify(storedData));
+  }
+
+  function handleSave() {
+    setLocalStorage("personalData", personal);
+    setLocalStorage("educationData", education);
+    setLocalStorage("experienceData", experience);
+    setLocalStorage("skillsData", skills);
+    setLocalStorage("styleData", style);
+  }
+
+  function handleDelete() {
+    localStorage.clear();
+  }
+
   return(
     <div className="finishedCV">
       <h2>Preview</h2>
-      <button className="add-btn">Save draft</button> 
+      <button onClick={handleSave} className="add-btn">Save draft</button> 
+      <button onClick={handleDelete} className="add-btn">Delete draft</button> 
       <button className="add-btn">Download PDF</button>
       
       <div id="preview" className={style}>
