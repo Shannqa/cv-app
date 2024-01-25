@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 
-export const FinishedCV = React.forwardRef(( { personal, education, experience, skills, style, image }, ref ) => {
+export const FinishedCV = React.forwardRef(( { print, personal, education, experience, skills, style, image }, ref ) => {
   
   const contactInfo = personal.filter((item) => item.label !== "First Name" && item.label !== "Last Name" );
   
@@ -26,7 +26,7 @@ export const FinishedCV = React.forwardRef(( { personal, education, experience, 
       <h2>Preview</h2>
       <button onClick={handleSave} className="add-btn">Save draft</button> 
       <button onClick={handleDelete} className="add-btn">Delete draft</button> 
-      <button className="add-btn">Download PDF</button>
+      <button onClick= {print} className="add-btn">Print / Download</button>
       
       <div id="preview" className={style} ref={ref}>
         <div className="left">

@@ -34,9 +34,8 @@ function App() {
       <Skills data={skillsData} setter={setSkillsData} />
       <UploadImage data={imageData} setter={setImageData} />
       <Customization style={style} setter={setStyle}/>
-      <FinishedCV ref={componentRef} personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={styleData} image={imageData}/>
+      <FinishedCV ref={componentRef} print={handlePrint} personal={personalData} education={educationData} experience={experienceData} skills={skillsData} style={styleData} image={imageData}/>
       <Footer />
-      <button onClick={handlePrint}>print</button>
     </>
   )
 }
