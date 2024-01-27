@@ -30,7 +30,7 @@ export const FinishedCV = React.forwardRef(( { print, personal, education, exper
       
       <div id="preview" className={style} ref={ref}>
         <div className="left">
-        <img src={image || "./src/assets/face_3_FILL1_wght400_GRAD0_opsz24.svg"} className="photo" />
+        <img src={image || "./assets/face_3_FILL1_wght400_GRAD0_opsz24.svg"} className="photo" />
           <h4>Contact</h4>
           <div className="contact-info">
             <div>
@@ -54,7 +54,7 @@ export const FinishedCV = React.forwardRef(( { print, personal, education, exper
           <div className="skill-info">
               {skills.map(item => (
                 <div key={item.id}>
-                  <img src="src/assets/keyboard_double_arrow_right_FILL0_wght400_GRAD0_opsz24.svg" />
+                  <img src="./assets/keyboard_double_arrow_right_FILL0_wght400_GRAD0_opsz24.svg" />
                   <span>{item.value || "Your skill"}</span>
                 </div>
               ))}

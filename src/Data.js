@@ -18,28 +18,28 @@ const personal = [
     label: "City",
     value: "",
     placeholder: "London",
-    img: "./src/assets/location_on_FILL0_wght400_GRAD0_opsz24.svg",
+    img: "./assets/location_on_FILL0_wght400_GRAD0_opsz24.svg",
   },
   {
     id: uuidv4(),
     label: "Phone Number",
     value: "",
     placeholder: "+65245563123",
-    img: "./src/assets/smartphone_FILL0_wght400_GRAD0_opsz24.svg",
+    img: "./assets/smartphone_FILL0_wght400_GRAD0_opsz24.svg",
   },
   {
     id: uuidv4(),
     label: "Email Address",
     value: "",
     placeholder: "example@email.com",
-    img: "./src/assets/mail_FILL0_wght400_GRAD0_opsz24.svg",
+    img: "./assets/mail_FILL0_wght400_GRAD0_opsz24.svg",
   },
   {
     id: uuidv4(),
     label: "Website",
     value: "",
     placeholder: "janedoe.example.com",
-    img: "./src/assets/language_FILL0_wght400_GRAD0_opsz24.svg",
+    img: "./assets/language_FILL0_wght400_GRAD0_opsz24.svg",
   },
 ];
 
